@@ -1,0 +1,4828 @@
+
+/* GENERAL SETTINGS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --primary: #2878D0;
+    --dark-blue: #153B65;
+    --light-blue: #EAF4FF;
+    --white: #FFFFFF;
+    --text: #334155;
+    --background: #F6FAFF;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: var(--background);
+    color: var(--text);
+    line-height: 1.7;
+}
+
+
+/* NAVIGATION */
+header {
+    background: var(--white);
+    box-shadow: 0 3px 15px rgba(0,0,0,0.06);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    max-width: 1400px;
+    width: 100%;
+    margin: auto;
+    padding: 18px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--dark-blue);
+    text-decoration: none;
+}
+
+.logo span,
+footer span {
+    color: var(--primary);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text);
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+
+/* HOME SECTION */
+.hero {
+    min-height: 580px;
+    padding: 80px 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    background: linear-gradient(
+        120deg,
+        #EAF4FF,
+        #FFFFFF
+    );
+}
+
+.hero-text {
+    max-width: 550px;
+}
+
+.subtitle {
+    color: var(--primary);
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.hero h1 {
+    font-size: clamp(38px, 5vw, 58px);
+    color: var(--dark-blue);
+    margin: 12px 0;
+}
+
+.hero h1 span,
+.section h2 span {
+    color: var(--primary);
+}
+
+.hero h3 {
+    color: #54718F;
+    margin-bottom: 20px;
+}
+
+.hero-text p:not(.subtitle) {
+    margin-bottom: 25px;
+}
+
+.profile {
+    width: 320px;
+    height: 370px;
+    flex-shrink: 0;
+    border: 8px solid white;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(40,120,208,0.18);
+}
+
+.profile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* BUTTONS */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    background: var(--primary);
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: var(--dark-blue);
+    transform: translateY(-3px);
+}
+
+
+/* GENERAL SECTIONS */
+.section {
+    padding: 85px 10%;
+    text-align: center;
+    scroll-margin-top: 75px;
+}
+
+.section h2 {
+    font-size: 34px;
+    color: var(--dark-blue);
+    margin-bottom: 10px;
+}
+
+.section-intro {
+    color: #718096;
+    margin-bottom: 40px;
+}
+
+
+/* CARDS */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    text-align: left;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.04);
+    border: 1px solid #E6EFF8;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(40,120,208,0.12);
+}
+
+.card-icon {
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    color: var(--dark-blue);
+    margin-bottom: 15px;
+}
+
+.card p {
+    margin-bottom: 10px;
+}
+
+
+/* EDUCATION TIMELINE */
+.education {
+    background: var(--light-blue);
+}
+
+.timeline {
+    max-width: 650px;
+    margin: auto;
+    text-align: left;
+}
+
+.timeline-item {
+    background: white;
+    padding: 25px;
+    margin-bottom: 20px;
+    border-left: 5px solid var(--primary);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+}
+
+.timeline-item span {
+    color: var(--primary);
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.timeline-item h3 {
+    color: var(--dark-blue);
+    margin: 5px 0;
+}
+
+
+/* HOBBIES */
+.hobbies {
+    background: #FFFFFF;
+}
+
+.hobby-card {
+    text-align: center;
+}
+
+.fact-box {
+    max-width: 600px;
+    margin: 40px auto 0;
+    background: var(--light-blue);
+    border-radius: 18px;
+    padding: 30px;
+}
+
+.fact-box h3 {
+    color: var(--dark-blue);
+    margin-bottom: 10px;
+}
+
+.fact-box p {
+    margin-bottom: 20px;
+}
+
+
+/* PHOTO CAROUSEL */
+.gallery {
+    background: var(--light-blue);
+}
+
+.carousel {
+    position: relative;
+    max-width: 850px;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 22px;
+    background: white;
+    box-shadow: 0 12px 35px rgba(0,0,0,0.10);
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.6s ease-in-out;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    position: relative;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 480px;
+    display: block;
+    object-fit: cover;
+}
+
+.slide-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 35px 20px 25px;
+    text-align: left;
+    color: white;
+    background: linear-gradient(
+        transparent,
+        rgba(0,0,0,0.8)
+    );
+}
+
+.slide-caption h3 {
+    font-size: 25px;
+}
+
+.slide-caption p {
+    font-size: 14px;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.9);
+    color: var(--dark-blue);
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.carousel-btn:hover {
+    background: var(--primary);
+    color: white;
+}
+
+.prev {
+    left: 15px;
+}
+
+.next {
+    right: 15px;
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 22px;
+}
+
+.dot {
+    width: 11px;
+    height: 11px;
+    border: none;
+    border-radius: 50%;
+    background: #A8C7E8;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.dot.active {
+    background: var(--primary);
+    width: 28px;
+    border-radius: 10px;
+}
+
+.gallery-note {
+    color: #718096;
+    font-size: 13px;
+    margin-top: 15px;
+}
+
+
+/* FUTURE GOALS */
+.future {
+    background: white;
+}
+
+.goal-card {
+    text-align: center;
+}
+
+
+/* LIFE MOTTO */
+.motto-section {
+    background: linear-gradient(
+        120deg,
+        #153B65,
+        #2878D0
+    );
+    padding: 65px 20px;
+    text-align: center;
+    color: white;
+}
+
+.motto-section .subtitle {
+    color: #B8D9FF;
+}
+
+.motto-section h2 {
+    font-size: clamp(28px, 5vw, 42px);
+    margin: 15px 0;
+}
+
+.motto-section p:last-child {
+    color: #E0EDFF;
+}
+
+
+/* FOOTER */
+footer {
+    background: #102C4C;
+    color: white;
+    text-align: center;
+    padding: 35px 20px;
+}
+
+footer h3 {
+    font-size: 27px;
+    margin-bottom: 10px;
+}
+
+footer p {
+    font-size: 13px;
+    color: #C7D9EB;
+    margin: 5px;
+}
+
+
+
+/* BACK TO TOP BUTTON ANIMATION */
+
+#back-to-top {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 48px;
+    height: 48px;
+    border: none;
+    border-radius: 50%;
+    background: var(--primary);
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 100;
+
+    /* Animation */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+
+    transition: opacity 0.4s ease,
+                transform 0.4s ease,
+                visibility 0.4s ease;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+/* SHOW BUTTON */
+#back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* HOVER EFFECT */
+#back-to-top:hover {
+    background: var(--dark-blue);
+    transform: translateY(-5px);
+}
+
+
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 850px) {
+
+    .navbar {
+        flex-direction: column;
+    }
+
+    .nav-links {
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: 60px 7%;
+    }
+
+    .profile {
+        width: 250px;
+        height: 290px;
+    }
+
+    .card-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 550px) {
+
+    .section {
+        padding: 60px 6%;
+    }
+
+    .section h2 {
+        font-size: 28px;
+    }
+
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .nav-links {
+        gap: 12px;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+    }
+
+    .carousel-slide img {
+        height: 300px;
+    }
+
+    .slide-caption h3 {
+        font-size: 20px;
+    }
+
+    .carousel-btn {
+        width: 38px;
+        height: 38px;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+}
+
+/* REDUCED MOTION */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* BIGBANG MUSIC SECTION */
+
+.music {
+    background: #EAF4FF;
+}
+
+.music-card {
+    max-width: 700px;
+    margin: auto;
+    padding: 45px 35px;
+    background: white;
+    border-radius: 22px;
+    border: 1px solid #DCEBFA;
+    box-shadow: 0 10px 30px rgba(40,120,208,0.10);
+    text-align: center;
+    transition: 0.3s;
+}
+
+.music-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(40,120,208,0.16);
+}
+
+.music-icon {
+    font-size: 55px;
+    margin-bottom: 15px;
+}
+
+.music-label {
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: var(--primary);
+}
+
+.music-card h3 {
+    font-size: 45px;
+    color: var(--dark-blue);
+    margin: 12px 0;
+    letter-spacing: 3px;
+}
+
+.music-description {
+    max-width: 520px;
+    margin: 0 auto 30px;
+    color: var(--text);
+}
+
+.music-dream {
+    background: var(--light-blue);
+    padding: 25px;
+    border-radius: 15px;
+}
+
+.music-dream span {
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--primary);
+}
+
+.music-dream h4 {
+    color: var(--dark-blue);
+    font-size: 22px;
+    margin: 10px 0;
+}
+
+.music-dream p {
+    color: #718096;
+    font-size: 14px;
+}
+
+/* CLICK TO ENLARGE GALLERY */
+
+.carousel-slide img {
+    cursor: zoom-in;
+}
+
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 25, 45, 0.95);
+
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 60px 20px;
+}
+
+.lightbox.show {
+    display: flex;
+}
+
+.lightbox img {
+    max-width: 85%;
+    max-height: 75vh;
+    object-fit: contain;
+    border: 5px solid white;
+    border-radius: 12px;
+}
+
+.lightbox button {
+    position: absolute;
+    border: none;
+    background: white;
+    color: var(--dark-blue);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.lightbox button:hover {
+    background: var(--primary);
+    color: white;
+}
+
+.lightbox-close {
+    top: 25px;
+    right: 30px;
+}
+
+.lightbox-prev {
+    left: 30px;
+    top: 50%;
+}
+
+.lightbox-next {
+    right: 30px;
+    top: 50%;
+}
+
+#lightbox-caption {
+    color: white;
+    margin-top: 20px;
+    font-size: 16px;
+    text-align: center;
+}
+
+@media (max-width: 550px) {
+
+    .lightbox img {
+        max-width: 95%;
+        max-height: 65vh;
+    }
+
+    .lightbox-prev {
+        left: 8px;
+    }
+
+    .lightbox-next {
+        right: 8px;
+    }
+
+}
+
+/* BIGBANG GROUP PHOTO */
+
+.bigbang-photo {
+    width: 100%;
+    max-width: 500px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 25px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+/* SCROLL REVEAL ANIMATION */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(35px);
+    transition: opacity 0.8s ease,
+                transform 0.8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* REDUCED MOTION ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+}
+/* CONTACT SECTION */
+
+.contact {
+    background: #FFFFFF;
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.contact-card {
+    background: #EAF4FF;
+    padding: 35px 20px;
+    border-radius: 18px;
+    text-decoration: none;
+    border: 1px solid #DCEBFA;
+    transition: 0.3s;
+}
+
+.contact-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(40,120,208,0.15);
+}
+
+.contact-icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.contact-card h3 {
+    color: #153B65;
+    margin-bottom: 8px;
+}
+
+.contact-card p {
+    color: #54718F;
+    font-size: 14px;
+}
+
+@media (max-width: 650px) {
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* MULTIMEDIA GALLERY */
+
+.multimedia {
+    background: #EAF4FF;
+}
+
+.video-gallery {
+    max-width: 850px;
+    margin: 0 auto 30px;
+    padding: 35px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(40,120,208,0.08);
+    text-align: center;
+}
+
+.video-gallery h3 {
+    color: #153B65;
+    margin-bottom: 8px;
+}
+
+.video-gallery p {
+    color: #54718F;
+    margin-bottom: 25px;
+}
+
+.video-gallery video {
+    display: block;
+    width: 100%;
+    max-width: 700px;
+    max-height: 480px;
+    margin: auto;
+    border-radius: 15px;
+    background: #102C4C;
+}
+
+.audio-gallery {
+    max-width: 850px;
+    margin: auto;
+    padding: 25px 30px;
+    background: white;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 8px 25px rgba(40,120,208,0.08);
+}
+
+.audio-icon {
+    font-size: 40px;
+}
+
+.audio-info {
+    flex: 1;
+}
+
+.audio-info h3 {
+    color: #153B65;
+}
+
+.audio-info p {
+    color: #54718F;
+    font-size: 14px;
+}
+
+.audio-gallery audio {
+    width: 45%;
+}
+
+@media (max-width: 650px) {
+    .audio-gallery {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .audio-gallery audio {
+        width: 100%;
+    }
+
+    .video-gallery {
+        padding: 20px;
+    }
+}
+/* MUSIC AUDIO PLAYER */
+
+.music-audio {
+    margin-top: 25px;
+    padding: 25px;
+    background: #EAF4FF;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.music-audio h4 {
+    color: #153B65;
+    margin-bottom: 10px;
+}
+
+.music-audio p {
+    color: #54718F;
+    margin-bottom: 15px;
+}
+
+.music-audio audio {
+    width: 100%;
+    max-width: 450px;
+}
+
+/* ==================================
+   CREATIVE BENTO DESIGN
+   STEP 1: NAVIGATION + HOMEPAGE
+================================== */
+
+/* NAVIGATION BAR */
+header {
+    background: #171717;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+}
+
+.navbar {
+    max-width: 1500px;
+    padding: 16px 5%;
+    gap: 25px;
+}
+
+.logo {
+    color: #ffffff;
+    font-size: 19px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    white-space: nowrap;
+}
+
+.logo span {
+    color: #c5f36b;
+}
+
+.nav-links {
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+.nav-links a {
+    color: #dddddd;
+    font-size: 12px;
+    padding: 8px 11px;
+    border-radius: 10px;
+    transition: 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #171717;
+    background: #c5f36b;
+}
+
+
+/* HOMEPAGE BENTO LAYOUT */
+.hero {
+    min-height: 650px;
+    padding: 75px 8%;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
+    gap: 30px;
+    background: #f1f0e9;
+}
+
+/* INTRODUCTION CARD */
+.hero-text {
+    max-width: none;
+    min-height: 420px;
+    padding: 55px 45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    background: #ffffff;
+    border-radius: 28px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-text::after {
+    content: "ASHYO / 01";
+    position: absolute;
+    right: 25px;
+    bottom: 18px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    color: #aaaaaa;
+}
+
+.subtitle {
+    color: #789c35;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    margin-bottom: 12px;
+}
+
+.hero h1 {
+    font-size: clamp(42px, 5vw, 68px);
+    line-height: 1.1;
+    color: #171717;
+    margin: 12px 0;
+}
+
+.hero h1 span {
+    color: #789c35;
+}
+
+.hero h3 {
+    color: #777777;
+    font-size: 17px;
+    margin-bottom: 22px;
+}
+
+.hero-text p:not(.subtitle) {
+    color: #555555;
+    line-height: 1.9;
+    margin-bottom: 28px;
+    max-width: 500px;
+}
+
+/* DISCOVER MORE BUTTON */
+.hero .btn {
+    background: #171717;
+    color: #ffffff;
+    padding: 14px 25px;
+    border-radius: 12px;
+    font-size: 14px;
+    transition: 0.3s ease;
+}
+
+.hero .btn:hover {
+    background: #c5f36b;
+    color: #171717;
+    transform: translateY(-4px);
+}
+
+
+/* PROFILE PHOTO CARD */
+.profile {
+    width: 100%;
+    height: 470px;
+    max-width: 420px;
+    justify-self: center;
+    border: none;
+    border-radius: 28px;
+    background: #c5f36b;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.10);
+    position: relative;
+    overflow: visible;
+}
+
+.profile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 28px;
+    display: block;
+}
+
+.profile::after {
+    content: "THE PERSON BEHIND THE PAGE";
+    position: absolute;
+    bottom: 20px;
+    left: -15px;
+    background: #171717;
+    color: #ffffff;
+    padding: 12px 18px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+
+/* TABLET AND MOBILE */
+@media (max-width: 850px) {
+
+    .navbar {
+        flex-direction: column;
+        padding: 18px 5%;
+    }
+
+    .nav-links {
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        padding: 45px 6%;
+        gap: 25px;
+    }
+
+    .hero-text {
+        min-height: 350px;
+        padding: 40px 30px;
+        text-align: left;
+    }
+
+    .profile {
+        width: 300px;
+        height: 360px;
+    }
+}
+
+@media (max-width: 550px) {
+
+    .logo {
+        font-size: 16px;
+    }
+
+    .nav-links a {
+        font-size: 11px;
+        padding: 6px 8px;
+    }
+
+    .hero {
+        padding: 30px 5%;
+    }
+
+    .hero-text {
+        padding: 35px 22px;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .hero h3 {
+        font-size: 15px;
+    }
+
+    .profile {
+        width: 250px;
+        height: 300px;
+    }
+}
+
+/* ==================================
+   CREATIVE BENTO DESIGN
+   STEP 2: ABOUT ME SECTION
+================================== */
+
+/* ABOUT SECTION BACKGROUND */
+#about {
+    background: #f1f0e9;
+    padding: 90px 8%;
+}
+
+/* ABOUT SECTION HEADING */
+#about h2 {
+    color: #171717;
+    font-size: 42px;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+#about h2 span {
+    color: #789c35;
+}
+
+#about .section-intro {
+    color: #777777;
+    font-size: 15px;
+    margin-bottom: 40px;
+}
+
+/* BENTO CARD LAYOUT */
+#about .card-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 0.9fr;
+    gap: 20px;
+    align-items: stretch;
+}
+
+/* GENERAL CARD DESIGN */
+#about .card {
+    min-height: 300px;
+    padding: 32px;
+    border: none;
+    border-radius: 24px;
+    background: #ffffff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+/* CARD HOVER EFFECT */
+#about .card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 35px rgba(0, 0, 0, 0.09);
+}
+
+/* CARD ICONS */
+#about .card-icon {
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f1f0e9;
+    border-radius: 16px;
+    font-size: 25px;
+    margin-bottom: 25px;
+}
+
+/* CARD HEADINGS */
+#about .card h3 {
+    color: #171717;
+    font-size: 21px;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+/* CARD PARAGRAPHS */
+#about .card p {
+    color: #666666;
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 9px;
+}
+
+/* PERSONAL DETAILS CARD */
+#about .card:nth-child(1) {
+    background: #171717;
+}
+
+#about .card:nth-child(1) .card-icon {
+    background: #c5f36b;
+}
+
+#about .card:nth-child(1) h3 {
+    color: #ffffff;
+}
+
+#about .card:nth-child(1) p {
+    color: #dddddd;
+}
+
+#about .card:nth-child(1) strong {
+    color: #c5f36b;
+}
+
+/* EDUCATION CARD */
+#about .card:nth-child(2) {
+    background: #dff0b2;
+}
+
+#about .card:nth-child(2) .card-icon {
+    background: #ffffff;
+}
+
+/* PERSONALITY CARD */
+#about .card:nth-child(3) {
+    background: #ffffff;
+}
+
+#about .card:nth-child(3) .card-icon {
+    background: #f1f0e9;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 900px) {
+    #about .card-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    #about .card:nth-child(1) {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 600px) {
+    #about {
+        padding: 65px 6%;
+    }
+
+    #about h2 {
+        font-size: 34px;
+    }
+
+    #about .card-grid {
+        grid-template-columns: 1fr;
+    }
+
+    #about .card:nth-child(1) {
+        grid-column: span 1;
+    }
+
+    #about .card {
+        min-height: auto;
+        padding: 28px;
+    }
+}
+
+/* ==================================
+   CREATIVE BENTO DESIGN
+   STEP 3: EDUCATION TIMELINE
+================================== */
+
+/* EDUCATION SECTION */
+#education {
+    background: #ffffff;
+    padding: 90px 8%;
+}
+
+/* SECTION HEADING */
+#education h2 {
+    color: #171717;
+    font-size: 42px;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+#education h2 span {
+    color: #789c35;
+}
+
+#education .section-intro {
+    color: #777777;
+    font-size: 15px;
+    margin-bottom: 55px;
+}
+
+/* TIMELINE LAYOUT */
+#education .timeline {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    position: relative;
+    align-items: stretch;
+}
+
+/* TIMELINE CARDS */
+#education .timeline-item {
+    position: relative;
+    background: #f1f0e9;
+    border: none;
+    border-radius: 24px;
+    padding: 35px 28px;
+    min-height: 270px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+/* HOVER EFFECT */
+#education .timeline-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 35px rgba(0, 0, 0, 0.09);
+}
+
+/* STAGE LABEL */
+#education .timeline-item span {
+    display: inline-block;
+    background: #c5f36b;
+    color: #171717;
+    padding: 8px 13px;
+    border-radius: 8px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin-bottom: 25px;
+}
+
+/* EDUCATION TITLE */
+#education .timeline-item h3 {
+    color: #171717;
+    font-size: 23px;
+    font-weight: 800;
+    line-height: 1.4;
+    margin-bottom: 18px;
+}
+
+/* EDUCATION DETAILS */
+#education .timeline-item p {
+    color: #666666;
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 10px;
+}
+
+/* FIRST CARD */
+#education .timeline-item:nth-child(1) {
+    background: #171717;
+}
+
+#education .timeline-item:nth-child(1) h3 {
+    color: #ffffff;
+}
+
+#education .timeline-item:nth-child(1) p {
+    color: #dddddd;
+}
+
+/* SECOND CARD */
+#education .timeline-item:nth-child(2) {
+    background: #dff0b2;
+}
+
+#education .timeline-item:nth-child(2) span {
+    background: #ffffff;
+}
+
+/* THIRD CARD */
+#education .timeline-item:nth-child(3) {
+    background: #f1f0e9;
+}
+
+#education .timeline-item:nth-child(3) span {
+    background: #171717;
+    color: #c5f36b;
+}
+
+/* TABLET */
+@media (max-width: 900px) {
+    #education .timeline {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    #education .timeline-item {
+        min-height: auto;
+    }
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+    #education {
+        padding: 65px 6%;
+    }
+
+    #education h2 {
+        font-size: 34px;
+    }
+
+    #education .timeline-item {
+        padding: 28px 24px;
+    }
+
+    #education .timeline-item h3 {
+        font-size: 21px;
+    }
+}
+
+/* ==================================
+   CREATIVE BENTO DESIGN
+   STEP 4: FUN FACTS
+================================== */
+
+/* FUN FACTS SECTION */
+#facts {
+    background: #f1f0e9;
+    padding: 90px 8%;
+}
+
+/* SECTION HEADING */
+#facts h2 {
+    color: #171717;
+    font-size: 42px;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+#facts h2 span {
+    color: #789c35;
+}
+
+#facts .section-intro {
+    color: #777777;
+    font-size: 15px;
+    margin-bottom: 40px;
+}
+
+/* BENTO GRID */
+#facts .card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    align-items: stretch;
+}
+
+/* GENERAL CARD DESIGN */
+#facts .card {
+    min-height: 220px;
+    padding: 30px;
+    border: none;
+    border-radius: 24px;
+    background: #ffffff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+/* HOVER EFFECT */
+#facts .card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 35px rgba(0, 0, 0, 0.09);
+}
+
+/* CARD ICON */
+#facts .card-icon {
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f1f0e9;
+    border-radius: 16px;
+    font-size: 26px;
+    margin-bottom: 25px;
+}
+
+/* CARD TITLE */
+#facts .card h3 {
+    color: #171717;
+    font-size: 18px;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+/* CARD TEXT */
+#facts .card p {
+    color: #666666;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+/* FIRST CARD - FEATURED FOOD */
+#facts .card:nth-child(1) {
+    grid-column: span 2;
+    min-height: 280px;
+    background: #171717;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+#facts .card:nth-child(1) .card-icon {
+    background: #c5f36b;
+}
+
+#facts .card:nth-child(1) h3 {
+    color: #c5f36b;
+    font-size: 23px;
+}
+
+#facts .card:nth-child(1) p {
+    color: #ffffff;
+    font-size: 19px;
+    font-weight: 700;
+}
+
+/* SECOND CARD - FAVOURITE DRINK */
+#facts .card:nth-child(2) {
+    background: #dff0b2;
+}
+
+#facts .card:nth-child(2) .card-icon {
+    background: #ffffff;
+}
+
+/* THIRD CARD - FAVOURITE COLOUR */
+#facts .card:nth-child(3) {
+    background: #ffffff;
+}
+
+/* FOURTH CARD - FAVOURITE SPORT */
+#facts .card:nth-child(4) {
+    background: #c5f36b;
+}
+
+#facts .card:nth-child(4) .card-icon {
+    background: #ffffff;
+}
+
+/* FIFTH CARD - GAMING */
+#facts .card:nth-child(5) {
+    background: #ffffff;
+}
+
+/* SIXTH CARD - DREAM CAREER */
+#facts .card:nth-child(6) {
+    background: #171717;
+}
+
+#facts .card:nth-child(6) .card-icon {
+    background: #c5f36b;
+}
+
+#facts .card:nth-child(6) h3 {
+    color: #c5f36b;
+}
+
+#facts .card:nth-child(6) p {
+    color: #ffffff;
+}
+
+/* TABLET */
+@media (max-width: 900px) {
+    #facts .card-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    #facts .card:nth-child(1) {
+        grid-column: span 2;
+    }
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+    #facts {
+        padding: 65px 6%;
+    }
+
+    #facts h2 {
+        font-size: 34px;
+    }
+
+    #facts .card-grid {
+        grid-template-columns: 1fr;
+    }
+
+    #facts .card:nth-child(1) {
+        grid-column: span 1;
+    }
+
+    #facts .card {
+        min-height: 190px;
+        padding: 25px;
+    }
+}
+
+/* ==================================
+   CREATIVE BENTO DESIGN
+   STEP 5: HOBBIES
+================================== */
+
+/* HOBBIES SECTION */
+#hobbies {
+    background: #ffffff;
+    padding: 90px 8%;
+}
+
+/* SECTION HEADING */
+#hobbies h2 {
+    color: #171717;
+    font-size: 42px;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+#hobbies h2 span {
+    color: #789c35;
+}
+
+#hobbies .section-intro {
+    color: #777777;
+    font-size: 15px;
+    margin-bottom: 40px;
+}
+
+/* BENTO GRID */
+#hobbies .card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    align-items: stretch;
+}
+
+/* HOBBY CARDS */
+#hobbies .hobby-card {
+    min-height: 310px;
+    padding: 35px;
+    border: none;
+    border-radius: 25px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+/* HOVER EFFECT */
+#hobbies .hobby-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* LARGE HOBBY ICON */
+#hobbies .card-icon {
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 35px;
+    border-radius: 20px;
+    margin-bottom: 35px;
+}
+
+/* HOBBY TITLES */
+#hobbies .hobby-card h3 {
+    font-size: 23px;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+/* HOBBY DESCRIPTIONS */
+#hobbies .hobby-card p {
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+/* FIRST CARD - PRAWN FISHING */
+#hobbies .hobby-card:nth-child(1) {
+    background: #171717;
+}
+
+#hobbies .hobby-card:nth-child(1) .card-icon {
+    background: #c5f36b;
+}
+
+#hobbies .hobby-card:nth-child(1) h3 {
+    color: #c5f36b;
+}
+
+#hobbies .hobby-card:nth-child(1) p {
+    color: #dddddd;
+}
+
+/* SECOND CARD - GAMING */
+#hobbies .hobby-card:nth-child(2) {
+    background: #dff0b2;
+}
+
+#hobbies .hobby-card:nth-child(2) .card-icon {
+    background: #ffffff;
+}
+
+#hobbies .hobby-card:nth-child(2) h3 {
+    color: #171717;
+}
+
+#hobbies .hobby-card:nth-child(2) p {
+    color: #555555;
+}
+
+/* THIRD CARD - RUNNING */
+#hobbies .hobby-card:nth-child(3) {
+    background: #f1f0e9;
+}
+
+#hobbies .hobby-card:nth-child(3) .card-icon {
+    background: #c5f36b;
+}
+
+#hobbies .hobby-card:nth-child(3) h3 {
+    color: #171717;
+}
+
+#hobbies .hobby-card:nth-child(3) p {
+    color: #666666;
+}
+
+/* TABLET */
+@media (max-width: 900px) {
+    #hobbies .card-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+    #hobbies {
+        padding: 65px 6%;
+    }
+
+    #hobbies h2 {
+        font-size: 34px;
+    }
+
+    #hobbies .card-grid {
+        grid-template-columns: 1fr;
+    }
+
+    #hobbies .hobby-card {
+        min-height: auto;
+        padding: 30px;
+    }
+}
+
+/* ==================================
+   CREATIVE BENTO DESIGN
+   STEP 6: PHOTO GALLERY
+================================== */
+
+/* GALLERY SECTION */
+#gallery {
+    background: #f1f0e9;
+    padding: 90px 8%;
+}
+
+/* SECTION HEADING */
+#gallery h2 {
+    color: #171717;
+    font-size: 42px;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+#gallery h2 span {
+    color: #789c35;
+}
+
+#gallery .section-intro {
+    color: #777777;
+    font-size: 15px;
+    margin-bottom: 40px;
+}
+
+/* CAROUSEL CONTAINER */
+#gallery .carousel {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    border-radius: 28px;
+    overflow: hidden;
+    background: #171717;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
+}
+
+/* CAROUSEL TRACK */
+#gallery .carousel-track {
+    display: flex;
+    transition: transform 0.6s ease;
+}
+
+/* EACH SLIDE */
+#gallery .carousel-slide {
+    min-width: 100%;
+    height: 550px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* GALLERY IMAGES */
+#gallery .carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+}
+
+/* IMAGE HOVER */
+#gallery .carousel-slide:hover img {
+    transform: scale(1.04);
+}
+
+/* IMAGE CAPTION */
+#gallery .slide-caption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 65px 35px 35px;
+    background: linear-gradient(
+        transparent,
+        rgba(0, 0, 0, 0.85)
+    );
+    color: #ffffff;
+}
+
+#gallery .slide-caption h3 {
+    font-size: 27px;
+    font-weight: 800;
+    margin-bottom: 8px;
+}
+
+#gallery .slide-caption p {
+    color: #eeeeee;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* PREVIOUS AND NEXT BUTTONS */
+#gallery .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    border: none;
+    border-radius: 50%;
+    background: #c5f36b;
+    color: #171717;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 5;
+    transition: 0.3s ease;
+}
+
+#gallery .carousel-btn:hover {
+    background: #ffffff;
+    transform: translateY(-50%) scale(1.1);
+}
+
+#gallery .carousel-btn.prev {
+    left: 20px;
+}
+
+#gallery .carousel-btn.next {
+    right: 20px;
+}
+
+/* CAROUSEL DOTS */
+#gallery .carousel-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 25px 0 18px;
+}
+
+#gallery .carousel-dots button {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: none;
+    background: #c4c4c4;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+#gallery .carousel-dots button.active {
+    width: 28px;
+    border-radius: 10px;
+    background: #789c35;
+}
+
+/* GALLERY NOTE */
+#gallery .gallery-note {
+    color: #777777;
+    font-size: 13px;
+    text-align: center;
+    margin-top: 15px;
+}
+
+/* TABLET */
+@media (max-width: 900px) {
+    #gallery .carousel-slide {
+        height: 450px;
+    }
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+    #gallery {
+        padding: 65px 6%;
+    }
+
+    #gallery h2 {
+        font-size: 34px;
+    }
+
+    #gallery .carousel {
+        border-radius: 20px;
+    }
+
+    #gallery .carousel-slide {
+        height: 350px;
+    }
+
+    #gallery .slide-caption {
+        padding: 45px 22px 25px;
+    }
+
+    #gallery .slide-caption h3 {
+        font-size: 21px;
+    }
+
+    #gallery .carousel-btn {
+        width: 38px;
+        height: 38px;
+        font-size: 16px;
+    }
+
+    #gallery .carousel-btn.prev {
+        left: 10px;
+    }
+
+    #gallery .carousel-btn.next {
+        right: 10px;
+    }
+}
+
+/* ==================================
+   CREATIVE BENTO DESIGN
+   STEP 7: FAVOURITE MUSIC
+================================== */
+
+/* MUSIC SECTION */
+#music {
+    background: #ffffff;
+    padding: 90px 8%;
+}
+
+/* SECTION HEADING */
+#music h2 {
+    color: #171717;
+    font-size: 42px;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+#music h2 span {
+    color: #789c35;
+}
+
+#music .section-intro {
+    color: #777777;
+    font-size: 15px;
+    margin-bottom: 40px;
+}
+
+/* MAIN MUSIC CARD */
+#music .music-card {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 25px;
+    align-items: center;
+    background: #171717;
+    padding: 35px;
+    border-radius: 30px;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
+}
+
+/* BIGBANG IMAGE */
+#music .bigbang-photo {
+    grid-column: 1;
+    grid-row: 1 / span 4;
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    border-radius: 22px;
+}
+
+/* MUSIC LABEL */
+#music .music-label {
+    color: #c5f36b;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+/* GROUP NAME */
+#music .music-card > h3 {
+    color: #ffffff;
+    font-size: 48px;
+    font-weight: 900;
+    margin: 0;
+}
+
+/* MUSIC DESCRIPTION */
+#music .music-description {
+    color: #dddddd;
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+/* BIGGEST DREAM CARD */
+#music .music-dream {
+    background: #c5f36b;
+    color: #171717;
+    padding: 22px;
+    border-radius: 18px;
+}
+
+#music .music-dream span {
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+#music .music-dream h4 {
+    font-size: 21px;
+    margin: 12px 0 8px;
+}
+
+#music .music-dream p {
+    font-size: 13px;
+    color: #444444;
+    margin: 0;
+}
+
+/* SONG PLAYER */
+#music .music-audio {
+    grid-column: 1 / -1;
+    background: #292929;
+    padding: 25px;
+    border-radius: 20px;
+    margin-top: 10px;
+}
+
+#music .music-audio h4 {
+    color: #c5f36b;
+    font-size: 17px;
+    margin-bottom: 10px;
+}
+
+#music .music-audio p {
+    color: #ffffff;
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+#music .music-audio audio {
+    width: 100%;
+}
+
+/* TABLET */
+@media (max-width: 900px) {
+    #music .music-card {
+        grid-template-columns: 1fr 1fr;
+        padding: 25px;
+    }
+
+    #music .bigbang-photo {
+        height: 350px;
+    }
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+    #music {
+        padding: 65px 6%;
+    }
+
+    #music h2 {
+        font-size: 34px;
+    }
+
+    #music .music-card {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+
+    #music .bigbang-photo {
+        grid-column: auto;
+        grid-row: auto;
+        height: 260px;
+    }
+
+    #music .music-card > h3 {
+        font-size: 38px;
+    }
+
+    #music .music-audio {
+        grid-column: auto;
+    }
+}
+
+
+/* BIGBANG IMAGE - LARGER BUT FULLY VISIBLE */
+#music .bigbang-photo {
+    width: 100%;
+    height: 460px;
+    max-height: none;
+    object-fit: contain;
+    object-position: center;
+    background: #171717;
+    border-radius: 22px;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+    #music .bigbang-photo {
+        height: 350px;
+        object-fit: contain;
+    }
+}
+
+/* ==================================
+   CREATIVE BENTO DESIGN
+   STEP 8: FUTURE GOALS
+================================== */
+
+/* FUTURE GOALS SECTION */
+#future {
+    background: #f1f0e9;
+    padding: 90px 8%;
+}
+
+/* SECTION HEADING */
+#future h2 {
+    color: #171717;
+    font-size: 42px;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+#future h2 span {
+    color: #789c35;
+}
+
+#future .section-intro {
+    color: #777777;
+    font-size: 15px;
+    margin-bottom: 40px;
+}
+
+/* BENTO GRID */
+#future .card-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    grid-template-rows: repeat(2, minmax(190px, auto));
+    gap: 22px;
+}
+
+/* GOAL CARDS */
+#future .goal-card {
+    border: none;
+    border-radius: 25px;
+    padding: 32px;
+    min-height: 190px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+#future .goal-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 35px rgba(0, 0, 0, 0.12);
+}
+
+/* FIRST CARD - DREAM CAREER */
+#future .goal-card:nth-child(1) {
+    grid-row: 1 / span 2;
+    background: #171717;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#future .goal-card:nth-child(1) .card-icon {
+    background: #c5f36b;
+}
+
+#future .goal-card:nth-child(1) h3 {
+    color: #c5f36b;
+    font-size: 27px;
+}
+
+#future .goal-card:nth-child(1) p {
+    color: #dddddd;
+    line-height: 1.9;
+}
+
+/* SECOND CARD - BIGBANG DREAM */
+#future .goal-card:nth-child(2) {
+    background: #c5f36b;
+}
+
+#future .goal-card:nth-child(2) .card-icon {
+    background: #ffffff;
+}
+
+#future .goal-card:nth-child(2) h3 {
+    color: #171717;
+}
+
+#future .goal-card:nth-child(2) p {
+    color: #444444;
+    line-height: 1.8;
+}
+
+/* THIRD CARD - RUGBY */
+#future .goal-card:nth-child(3) {
+    background: #ffffff;
+}
+
+#future .goal-card:nth-child(3) .card-icon {
+    background: #dff0b2;
+}
+
+#future .goal-card:nth-child(3) h3 {
+    color: #171717;
+}
+
+#future .goal-card:nth-child(3) p {
+    color: #666666;
+    line-height: 1.8;
+}
+
+/* ICONS */
+#future .card-icon {
+    width: 58px;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 18px;
+    font-size: 28px;
+    margin-bottom: 22px;
+}
+
+/* TABLET */
+@media (max-width: 900px) {
+    #future .card-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+    #future {
+        padding: 65px 6%;
+    }
+
+    #future h2 {
+        font-size: 34px;
+    }
+
+    #future .card-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+
+    #future .goal-card:nth-child(1) {
+        grid-row: auto;
+    }
+
+    #future .goal-card {
+        min-height: auto;
+        padding: 28px;
+    }
+}
+
+/* ==================================
+   CREATIVE BENTO DESIGN
+   STEP 9: MULTIMEDIA VIDEO
+================================== */
+
+/* MULTIMEDIA SECTION */
+#multimedia {
+    background: #ffffff;
+    padding: 90px 8%;
+}
+
+/* SECTION HEADING */
+#multimedia h2 {
+    color: #171717;
+    font-size: 42px;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+#multimedia h2 span {
+    color: #789c35;
+}
+
+#multimedia .section-intro {
+    color: #777777;
+    font-size: 15px;
+    margin-bottom: 40px;
+}
+
+/* VIDEO FEATURE CARD */
+#multimedia .video-gallery {
+    max-width: 950px;
+    margin: 0 auto;
+    padding: 35px;
+    background: #171717;
+    border-radius: 28px;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
+}
+
+/* VIDEO TITLE */
+#multimedia .video-gallery h3 {
+    color: #c5f36b;
+    font-size: 26px;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+/* VIDEO DESCRIPTION */
+#multimedia .video-gallery p {
+    color: #dddddd;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+/* VIDEO PLAYER */
+#multimedia .video-gallery video {
+    display: block;
+    width: 100%;
+    max-height: 520px;
+    background: #000000;
+    border-radius: 18px;
+    object-fit: contain;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+    #multimedia {
+        padding: 65px 6%;
+    }
+
+    #multimedia h2 {
+        font-size: 34px;
+    }
+
+    #multimedia .video-gallery {
+        padding: 20px;
+        border-radius: 22px;
+    }
+
+    #multimedia .video-gallery h3 {
+        font-size: 21px;
+    }
+}
+
+/* ==================================
+   CREATIVE BENTO DESIGN
+   STEP 10: CONTACT & SOCIAL MEDIA
+================================== */
+
+/* CONTACT SECTION */
+#contact {
+    background: #f1f0e9;
+    padding: 90px 8%;
+}
+
+/* SECTION HEADING */
+#contact h2 {
+    color: #171717;
+    font-size: 42px;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+#contact h2 span {
+    color: #789c35;
+}
+
+#contact .section-intro {
+    color: #777777;
+    font-size: 15px;
+    margin-bottom: 40px;
+}
+
+/* CONTACT GRID */
+#contact .contact-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+/* CONTACT CARDS */
+#contact .contact-card {
+    padding: 35px 25px;
+    min-height: 220px;
+    border: none;
+    border-radius: 25px;
+    background: #ffffff;
+    text-align: left;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+#contact .contact-card:hover {
+    transform: translateY(-9px);
+    box-shadow: 0 18px 35px rgba(0, 0, 0, 0.1);
+}
+
+/* CONTACT ICONS */
+#contact .contact-icon {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #dff0b2;
+    border-radius: 18px;
+    font-size: 28px;
+    margin-bottom: 25px;
+}
+
+/* FIRST CARD - EMAIL */
+#contact .contact-card:nth-child(1) {
+    background: #171717;
+}
+
+#contact .contact-card:nth-child(1) .contact-icon {
+    background: #c5f36b;
+}
+
+#contact .contact-card:nth-child(1) h3 {
+    color: #c5f36b;
+}
+
+/* SECOND CARD - INSTAGRAM */
+#contact .contact-card:nth-child(2) {
+    background: #c5f36b;
+}
+
+#contact .contact-card:nth-child(2) .contact-icon {
+    background: #ffffff;
+}
+
+#contact .contact-card:nth-child(2) h3 {
+    color: #171717;
+}
+
+/* THIRD CARD - TIKTOK */
+#contact .contact-card:nth-child(3) {
+    background: #ffffff;
+}
+
+#contact .contact-card:nth-child(3) h3 {
+    color: #171717;
+}
+
+/* CARD TEXT */
+#contact .contact-card h3 {
+    font-size: 22px;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+#contact .contact-card p {
+    font-size: 14px;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+}
+
+/* EMAIL TEXT */
+#contact .contact-card:nth-child(1) p {
+    color: #dddddd;
+}
+
+/* INSTAGRAM TEXT */
+#contact .contact-card:nth-child(2) p {
+    color: #444444;
+}
+
+/* TIKTOK TEXT */
+#contact .contact-card:nth-child(3) p {
+    color: #666666;
+}
+
+/* TABLET */
+@media (max-width: 900px) {
+    #contact .contact-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+    #contact {
+        padding: 65px 6%;
+    }
+
+    #contact h2 {
+        font-size: 34px;
+    }
+
+    #contact .contact-container {
+        grid-template-columns: 1fr;
+    }
+
+    #contact .contact-card {
+        min-height: auto;
+        padding: 28px;
+    }
+}
+
+/* ==================================
+   CREATIVE BENTO DESIGN
+   STEP 11: FOOTER & BACK TO TOP
+================================== */
+
+/* FOOTER */
+footer {
+    background: #171717;
+    color: #ffffff;
+    text-align: center;
+    padding: 55px 8%;
+    border-top: 5px solid #c5f36b;
+}
+
+/* FOOTER LOGO */
+footer h3 {
+    color: #ffffff;
+    font-size: 38px;
+    font-weight: 900;
+    margin-bottom: 12px;
+}
+
+footer h3 span {
+    color: #c5f36b;
+}
+
+/* FOOTER TEXT */
+footer p {
+    color: #aaaaaa;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+/* BACK TO TOP BUTTON */
+#back-to-top {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    width: 48px;
+    height: 48px;
+    border: none;
+    border-radius: 15px;
+    background: #c5f36b;
+    color: #171717;
+    font-size: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 999;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease,
+                background 0.3s ease;
+}
+
+/* BUTTON HOVER */
+#back-to-top:hover {
+    background: #ffffff;
+    transform: translateY(-5px);
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+    footer {
+        padding: 45px 6%;
+    }
+
+    footer h3 {
+        font-size: 32px;
+    }
+
+    #back-to-top {
+        right: 15px;
+        bottom: 15px;
+        width: 43px;
+        height: 43px;
+    }
+}
+
+/* ==================================
+   NEW EDITORIAL HOMEPAGE
+================================== */
+
+.home-editorial {
+    min-height: 650px;
+    padding: 35px 8% 30px;
+    background: #f1f0e9;
+    color: #171717;
+    overflow: hidden;
+}
+
+/* TOP AND BOTTOM LABELS */
+
+.home-topline,
+.home-bottomline {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.home-topline {
+    padding-bottom: 18px;
+    border-bottom: 1px solid #bdbdb4;
+}
+
+.home-bottomline {
+    padding-top: 20px;
+    border-top: 1px solid #bdbdb4;
+}
+
+/* MAIN LAYOUT */
+
+.home-layout {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+    gap: 45px;
+    max-width: 1250px;
+    margin: 45px auto;
+}
+
+/* LEFT SIDE */
+
+.home-copy {
+    position: relative;
+    z-index: 2;
+}
+
+.home-kicker {
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 4px;
+    margin-bottom: 15px;
+}
+
+.home-copy h1 {
+    font-size: clamp(75px, 11vw, 150px);
+    line-height: 0.78;
+    letter-spacing: -9px;
+    font-weight: 1000;
+    margin: 0 0 35px;
+}
+
+.home-copy h1 span {
+    color: #8ba83d;
+}
+
+.home-intro {
+    max-width: 430px;
+    border-left: 5px solid #c5f36b;
+    padding-left: 20px;
+}
+
+.home-intro h3 {
+    font-size: 15px;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.home-intro p {
+    color: #55554f;
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+/* DISCOVER LINK */
+
+.home-discover {
+    display: inline-flex;
+    align-items: center;
+    gap: 25px;
+    margin-top: 30px;
+    padding: 16px 23px;
+    background: #171717;
+    color: white;
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    transition: 0.3s ease;
+}
+
+.home-discover span {
+    color: #c5f36b;
+    font-size: 20px;
+}
+
+.home-discover:hover {
+    background: #8ba83d;
+    color: #171717;
+    transform: translateY(-4px);
+}
+
+/* RIGHT SIDE IMAGE */
+
+.home-visual {
+    position: relative;
+    min-height: 480px;
+    background: #c5f36b;
+    padding: 18px;
+    transform: rotate(2deg);
+}
+
+.home-visual img {
+    display: block;
+    width: 100%;
+    height: 480px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.home-image-label {
+    position: absolute;
+    left: -25px;
+    bottom: 35px;
+    display: flex;
+    flex-direction: column;
+    padding: 15px 25px;
+    background: #171717;
+    color: white;
+    transform: rotate(-2deg);
+}
+
+.home-image-label span {
+    font-size: 10px;
+    letter-spacing: 3px;
+}
+
+.home-image-label strong {
+    font-size: 30px;
+    letter-spacing: 2px;
+}
+
+.home-side-note {
+    position: absolute;
+    right: -35px;
+    top: 40px;
+    writing-mode: vertical-rl;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 3px;
+}
+
+/* TABLET AND MOBILE */
+
+@media (max-width: 800px) {
+    .home-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .home-copy h1 {
+        font-size: clamp(75px, 16vw, 120px);
+    }
+
+    .home-visual {
+        max-width: 500px;
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .home-side-note {
+        right: -25px;
+    }
+}
+
+@media (max-width: 500px) {
+    .home-editorial {
+        padding: 25px 6%;
+    }
+
+    .home-topline,
+    .home-bottomline {
+        font-size: 8px;
+        letter-spacing: 1px;
+    }
+
+    .home-copy h1 {
+        font-size: 76px;
+        letter-spacing: -5px;
+    }
+
+    .home-visual {
+        min-height: 350px;
+    }
+
+    .home-visual img {
+        height: 350px;
+    }
+
+    .home-image-label strong {
+        font-size: 23px;
+    }
+}
+
+/* ==================================
+   STEP 2: EDITORIAL ABOUT ME
+================================== */
+
+.about-editorial {
+    background: #e8e7df;
+    color: #171717;
+    padding: 100px 8%;
+}
+
+/* HEADING */
+
+.about-heading {
+    max-width: 1250px;
+    margin: 0 auto 55px;
+}
+
+.about-eyebrow,
+.about-label {
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 3px;
+}
+
+.about-heading h2 {
+    font-size: clamp(55px, 8vw, 100px);
+    line-height: 0.9;
+    letter-spacing: -5px;
+    margin: 20px 0;
+    font-weight: 1000;
+}
+
+.about-heading h2 span {
+    color: #8ba83d;
+}
+
+.about-description {
+    color: #66665e;
+    font-size: 15px;
+}
+
+/* DIFFERENT-SIZED PANELS */
+
+.about-layout {
+    max-width: 1250px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    grid-template-rows: auto auto;
+    gap: 18px;
+}
+
+/* PERSONAL DETAILS PANEL */
+
+.about-personal {
+    grid-row: span 2;
+    position: relative;
+    padding: 35px;
+    min-height: 560px;
+    background: #ffffff;
+}
+
+.about-number {
+    position: absolute;
+    top: 25px;
+    right: 30px;
+    font-size: 13px;
+    font-weight: 900;
+    opacity: 0.5;
+}
+
+.about-symbol {
+    font-size: 38px;
+    margin-bottom: 35px;
+}
+
+.about-personal h3,
+.about-education h3 {
+    font-size: clamp(35px, 4vw, 55px);
+    line-height: 0.98;
+    letter-spacing: -2px;
+    margin: 12px 0 30px;
+    font-weight: 900;
+}
+
+.about-details {
+    margin-top: 35px;
+}
+
+.about-details p {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 14px 0;
+    border-bottom: 1px solid #deded7;
+    font-size: 13px;
+}
+
+.about-details p span {
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    color: #77776e;
+}
+
+/* EDUCATION PANEL */
+
+.about-education {
+    position: relative;
+    padding: 35px;
+    min-height: 340px;
+    background: #171717;
+    color: #ffffff;
+}
+
+.about-education .about-label {
+    color: #c5f36b;
+}
+
+.about-course {
+    color: #cccccc;
+    line-height: 1.7;
+    font-size: 14px;
+}
+
+.about-uni {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 25px;
+    padding: 17px;
+    background: #292929;
+}
+
+.about-uni span {
+    color: #c5f36b;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.about-uni strong {
+    font-size: 15px;
+}
+
+/* PERSONALITY PANEL */
+
+.about-personality {
+    position: relative;
+    padding: 30px 35px;
+    min-height: 200px;
+    background: #c5f36b;
+}
+
+.about-personality h3 {
+    font-size: 28px;
+    line-height: 1.1;
+    margin: 10px 0;
+}
+
+.about-personality p:last-child {
+    font-size: 13px;
+    line-height: 1.8;
+    max-width: 450px;
+}
+
+/* BOTTOM LABEL */
+
+.about-footer {
+    max-width: 1250px;
+    margin: 35px auto 0;
+    padding-top: 18px;
+    border-top: 1px solid #bdbdb4;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 750px) {
+    .about-editorial {
+        padding: 70px 6%;
+    }
+
+    .about-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .about-personal {
+        grid-row: auto;
+        min-height: auto;
+    }
+
+    .about-education {
+        min-height: auto;
+    }
+
+    .about-footer {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 450px) {
+    .about-heading h2 {
+        font-size: 55px;
+        letter-spacing: -3px;
+    }
+
+    .about-personal,
+    .about-education,
+    .about-personality {
+        padding: 25px;
+    }
+
+    .about-details p {
+        flex-direction: column;
+        gap: 5px;
+    }
+}
+
+/* ==================================
+   STEP 3: EDITORIAL EDUCATION JOURNEY
+================================== */
+
+.education-editorial {
+    background: #f1f0e9;
+    color: #171717;
+    padding: 100px 8%;
+}
+
+/* HEADING */
+
+.education-heading {
+    max-width: 1250px;
+    margin: 0 auto 70px;
+}
+
+.education-eyebrow {
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 3px;
+}
+
+.education-heading h2 {
+    font-size: clamp(60px, 9vw, 110px);
+    line-height: 0.85;
+    letter-spacing: -6px;
+    margin: 22px 0;
+    font-weight: 1000;
+}
+
+.education-heading h2 span {
+    color: #8ba83d;
+}
+
+.education-heading > p:last-child {
+    color: #66665e;
+    font-size: 15px;
+}
+
+/* TIMELINE */
+
+.education-timeline {
+    max-width: 1100px;
+    margin: auto;
+    position: relative;
+}
+
+.education-timeline::before {
+    content: "";
+    position: absolute;
+    left: 39px;
+    top: 40px;
+    bottom: 50px;
+    width: 2px;
+    background: #b8b8ad;
+}
+
+/* EACH STAGE */
+
+.education-stage {
+    position: relative;
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 35px;
+    padding-bottom: 55px;
+}
+
+.education-marker {
+    position: relative;
+    z-index: 2;
+    width: 80px;
+    height: 80px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: #171717;
+    color: #c5f36b;
+    font-size: 23px;
+    font-weight: 900;
+}
+
+.education-content {
+    padding: 35px 40px;
+    background: #ffffff;
+    border-left: 5px solid #c5f36b;
+}
+
+.education-level {
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    color: #858578;
+}
+
+.education-content h3 {
+    font-size: clamp(35px, 5vw, 55px);
+    line-height: 0.95;
+    letter-spacing: -2px;
+    margin: 18px 0 30px;
+}
+
+/* SCHOOL DETAILS */
+
+.education-school {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 17px 0;
+    border-top: 1px solid #deded7;
+}
+
+.education-school span {
+    color: #858578;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.education-school strong {
+    font-size: 14px;
+    text-align: right;
+}
+
+/* CURRENT EDUCATION */
+
+.education-current .education-marker {
+    background: #c5f36b;
+    color: #171717;
+}
+
+.education-current .education-content {
+    background: #171717;
+    color: #ffffff;
+    border-left-color: #c5f36b;
+}
+
+.education-current .education-level {
+    color: #c5f36b;
+}
+
+.education-highlight {
+    padding: 25px;
+    background: #292929;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.education-highlight p {
+    color: #c5f36b;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.education-highlight strong {
+    font-size: 20px;
+}
+
+.education-highlight h4 {
+    font-size: 16px;
+    font-weight: 500;
+    color: #dddddd;
+}
+
+.education-highlight span {
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    color: #c5f36b;
+}
+
+/* FOOTER */
+
+.education-footer {
+    max-width: 1100px;
+    margin: 15px auto 0;
+    padding-top: 20px;
+    border-top: 1px solid #bdbdb4;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 650px) {
+    .education-editorial {
+        padding: 70px 6%;
+    }
+
+    .education-timeline::before {
+        left: 24px;
+    }
+
+    .education-stage {
+        grid-template-columns: 50px 1fr;
+        gap: 15px;
+        padding-bottom: 35px;
+    }
+
+    .education-marker {
+        width: 50px;
+        height: 50px;
+        font-size: 16px;
+    }
+
+    .education-content {
+        padding: 25px 20px;
+    }
+
+    .education-school {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 7px;
+    }
+
+    .education-school strong {
+        text-align: left;
+    }
+
+    .education-footer {
+        flex-direction: column;
+    }
+}
+
+/* ==================================
+   STEP 4: FUN FACTS EDITORIAL GRID
+================================== */
+
+.facts-editorial {
+    background: #171717;
+    color: #ffffff;
+    padding: 100px 8%;
+}
+
+/* HEADING */
+
+.facts-heading {
+    max-width: 1250px;
+    margin: 0 auto 55px;
+}
+
+.facts-eyebrow,
+.fact-number,
+.fact-label {
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 3px;
+}
+
+.facts-heading h2 {
+    font-size: clamp(60px, 9vw, 105px);
+    line-height: 0.85;
+    letter-spacing: -5px;
+    margin: 22px 0;
+    font-weight: 1000;
+}
+
+.facts-heading h2 span {
+    color: #c5f36b;
+}
+
+.facts-heading > p:last-child {
+    color: #aaaaaa;
+    font-size: 15px;
+}
+
+/* UNEVEN GRID */
+
+.facts-grid {
+    max-width: 1250px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 240px 240px 220px;
+    gap: 15px;
+}
+
+.facts-grid > div {
+    position: relative;
+    overflow: hidden;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    transition: transform 0.3s ease;
+}
+
+.facts-grid > div:hover {
+    transform: translateY(-6px);
+}
+
+.fact-number {
+    position: absolute;
+    top: 22px;
+    left: 25px;
+    opacity: 0.65;
+}
+
+/* FOOD FEATURE */
+
+.fact-food {
+    grid-column: span 2;
+    grid-row: span 2;
+    background: #c5f36b;
+    color: #171717;
+}
+
+.fact-food .fact-emoji {
+    font-size: 75px;
+    margin-bottom: auto;
+}
+
+.fact-food h3 {
+    font-size: clamp(42px, 6vw, 75px);
+    line-height: 0.85;
+    letter-spacing: -4px;
+    margin: 12px 0;
+}
+
+.fact-description {
+    font-size: 13px;
+}
+
+/* DRINK */
+
+.fact-drink {
+    background: #e8e7df;
+    color: #171717;
+}
+
+.fact-drink .fact-emoji,
+.fact-rugby .fact-emoji,
+.fact-gaming .fact-emoji,
+.fact-dream .fact-emoji {
+    font-size: 45px;
+    margin-bottom: auto;
+}
+
+.fact-drink h3,
+.fact-colour h3,
+.fact-rugby h3,
+.fact-gaming h3 {
+    font-size: 30px;
+    font-weight: 1000;
+    margin: 8px 0;
+}
+
+.fact-drink p:last-child,
+.fact-colour p:last-child,
+.fact-rugby p:last-child,
+.fact-gaming p:last-child,
+.fact-dream p:last-child {
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+/* COLOUR */
+
+.fact-colour {
+    background: #ffffff;
+    color: #171717;
+}
+
+.colour-circle {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    background: #2457b2;
+    margin: auto 0 10px;
+}
+
+/* RUGBY */
+
+.fact-rugby {
+    background: #8ba83d;
+    color: #171717;
+}
+
+/* GAMING */
+
+.fact-gaming {
+    background: #292929;
+    color: #ffffff;
+}
+
+/* DREAM CAREER */
+
+.fact-dream {
+    grid-column: span 2;
+    background: #e8e7df;
+    color: #171717;
+}
+
+.fact-dream .fact-emoji {
+    margin-bottom: auto;
+}
+
+.fact-dream h3 {
+    font-size: clamp(38px, 5vw, 60px);
+    line-height: 1;
+    margin: 8px 0;
+    letter-spacing: -2px;
+}
+
+/* FOOTER */
+
+.facts-footer {
+    max-width: 1250px;
+    margin: 30px auto 0;
+    padding-top: 20px;
+    border-top: 1px solid #444444;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    color: #aaaaaa;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 750px) {
+    .facts-editorial {
+        padding: 70px 6%;
+    }
+
+    .facts-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 220px);
+    }
+
+    .fact-food {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+
+    .fact-dream {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 450px) {
+    .facts-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+
+    .facts-grid > div {
+        min-height: 200px;
+        grid-column: auto;
+        grid-row: auto;
+    }
+
+    .fact-food h3 {
+        font-size: 55px;
+    }
+
+    .facts-footer {
+        flex-direction: column;
+    }
+}
+
+/* ==================================
+   STEP 5: HOBBIES PHOTO SHOWCASE
+================================== */
+
+.hobbies-editorial {
+    background: #e8e7df;
+    color: #171717;
+    padding: 100px 8%;
+}
+
+.hobbies-heading {
+    max-width: 1250px;
+    margin: 0 auto 55px;
+}
+
+.hobbies-eyebrow {
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 3px;
+}
+
+.hobbies-heading h2 {
+    font-size: clamp(60px, 9vw, 105px);
+    line-height: 0.85;
+    letter-spacing: -5px;
+    margin: 22px 0;
+    font-weight: 1000;
+}
+
+.hobbies-heading h2 span {
+    color: #8ba83d;
+}
+
+.hobbies-heading > p:last-child {
+    color: #66665e;
+    font-size: 15px;
+}
+
+/* THREE-COLUMN SHOWCASE */
+
+.hobbies-showcase {
+    max-width: 1250px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1.2fr 0.9fr 1fr;
+    gap: 18px;
+    align-items: start;
+}
+
+.hobby-feature {
+    overflow: hidden;
+    background: #ffffff;
+}
+
+.hobby-gaming {
+    margin-top: 65px;
+}
+
+.hobby-running {
+    margin-top: 125px;
+}
+
+/* PHOTO AREAS */
+
+.hobby-photo {
+    position: relative;
+    height: 340px;
+    overflow: hidden;
+    background: #c5f36b;
+}
+
+.hobby-photo img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.hobby-feature:hover .hobby-photo img {
+    transform: scale(1.06);
+}
+
+.hobby-photo-number {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    padding: 10px 14px;
+    background: #c5f36b;
+    color: #171717;
+    font-size: 12px;
+    font-weight: 900;
+}
+
+/* TEXT AREAS */
+
+.hobby-info {
+    padding: 25px;
+}
+
+.hobby-info > span {
+    color: #8ba83d;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.hobby-info h3 {
+    font-size: clamp(32px, 4vw, 48px);
+    line-height: 0.9;
+    letter-spacing: -2px;
+    margin: 15px 0;
+    font-weight: 1000;
+}
+
+.hobby-info p {
+    color: #66665e;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+/* FOOTER */
+
+.hobbies-footer {
+    max-width: 1250px;
+    margin: 35px auto 0;
+    padding-top: 20px;
+    border-top: 1px solid #bdbdb4;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+    .hobbies-showcase {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hobby-gaming,
+    .hobby-running {
+        margin-top: 0;
+    }
+
+    .hobby-running {
+        grid-column: span 2;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .hobby-running .hobby-photo {
+        height: 100%;
+        min-height: 280px;
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+    .hobbies-editorial {
+        padding: 70px 6%;
+    }
+
+    .hobbies-showcase {
+        grid-template-columns: 1fr;
+    }
+
+    .hobby-running {
+        grid-column: auto;
+        display: block;
+    }
+
+    .hobby-photo {
+        height: 280px;
+    }
+
+    .hobby-running .hobby-photo {
+        min-height: 0;
+    }
+
+    .hobbies-footer {
+        flex-direction: column;
+    }
+}
+
+/* ==================================
+   STEP 6: EDITORIAL PHOTO GALLERY
+================================== */
+
+.gallery-editorial {
+    background: #171717;
+    color: #f5f3eb;
+    padding: 100px 8%;
+}
+
+.gallery-heading {
+    max-width: 1250px;
+    margin: 0 auto 55px;
+}
+
+.gallery-eyebrow {
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    color: #c5f36b;
+}
+
+.gallery-heading h2 {
+    font-size: clamp(60px, 9vw, 105px);
+    line-height: 0.85;
+    letter-spacing: -5px;
+    margin: 22px 0;
+    font-weight: 1000;
+}
+
+.gallery-heading h2 span {
+    color: #c5f36b;
+}
+
+.gallery-heading > p:last-child {
+    color: #aaa99f;
+    font-size: 15px;
+}
+
+/* MASONRY-STYLE GRID */
+
+.gallery-grid {
+    max-width: 1250px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 230px;
+    gap: 16px;
+}
+
+.gallery-item {
+    position: relative;
+    margin: 0;
+    overflow: hidden;
+    background: #333;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.06);
+    opacity: 0.75;
+}
+
+.gallery-item figcaption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 35px 15px 15px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    color: white;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+}
+
+/* DIFFERENT IMAGE SIZES */
+
+.gallery-large {
+    grid-row: span 2;
+}
+
+.gallery-wide {
+    grid-column: span 2;
+}
+
+/* BOTTOM LABEL */
+
+.gallery-bottom {
+    max-width: 1250px;
+    margin: 35px auto 0;
+    padding-top: 20px;
+    border-top: 1px solid #444;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    color: #aaa99f;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+/* TABLET */
+
+@media (max-width: 800px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 210px;
+    }
+
+    .gallery-large {
+        grid-row: span 2;
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 550px) {
+    .gallery-editorial {
+        padding: 70px 6%;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-auto-rows: 170px;
+        gap: 10px;
+    }
+
+    .gallery-large {
+        grid-row: span 2;
+    }
+
+    .gallery-wide {
+        grid-column: span 2;
+    }
+
+    .gallery-bottom {
+        flex-direction: column;
+    }
+}
+section.gallery-editorial {
+    background: #171717 !important;
+    color: #f5f3eb !important;
+}
+
+.gallery-heading > p:last-child {
+    color: #aaa99f;
+}
+/* Fill the empty space in the gallery */
+.gallery-grid .gallery-item:nth-child(4) {
+    grid-column: span 2;
+}
+
+@media (max-width: 550px) {
+    .gallery-grid .gallery-item:nth-child(4) {
+        grid-column: span 2;
+    }
+}
+/* Show the complete gallery photos */
+.gallery-item img {
+    object-fit: contain;
+    background: #171717;
+}
+/* ==================================
+   STEP 7: MUSIC FEATURE
+================================== */
+
+.music-editorial {
+    background: #c5f36b;
+    color: #171717;
+    padding: 100px 8%;
+}
+
+.music-heading,
+.music-feature,
+.music-footer {
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.music-eyebrow {
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 3px;
+}
+
+.music-heading h2 {
+    font-size: clamp(60px, 9vw, 100px);
+    line-height: 0.85;
+    letter-spacing: -5px;
+    margin: 22px 0 55px;
+    font-weight: 1000;
+}
+
+.music-heading h2 span {
+    color: #ffffff;
+    -webkit-text-stroke: 2px #171717;
+}
+
+/* MAIN MUSIC FEATURE */
+
+.music-feature {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    background: #171717;
+    color: #ffffff;
+    overflow: hidden;
+}
+
+/* ALBUM IMAGE */
+
+.music-cover {
+    position: relative;
+    min-height: 420px;
+    background: #333;
+}
+
+.music-cover img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0;
+    object-fit: cover;
+}
+
+.music-cover-label {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 10px 14px;
+    background: #c5f36b;
+    color: #171717;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+/* MUSIC INFORMATION */
+
+.music-details {
+    padding: 45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.music-small-label {
+    color: #c5f36b;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.music-details h3 {
+    font-size: clamp(45px, 6vw, 70px);
+    line-height: 1;
+    margin: 12px 0;
+    letter-spacing: -3px;
+}
+
+.music-description {
+    color: #b7b7b7;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.music-divider {
+    height: 1px;
+    background: #444;
+    margin: 28px 0;
+}
+
+.music-details h4 {
+    font-size: 38px;
+    margin: 10px 0 0;
+}
+
+.music-artist {
+    color: #aaa;
+    margin: 5px 0 20px;
+}
+
+.music-details audio {
+    width: 100%;
+    max-width: 350px;
+}
+
+.music-note {
+    color: #888;
+    font-size: 9px;
+    letter-spacing: 2px;
+    margin-top: 18px;
+}
+
+/* FOOTER */
+
+.music-footer {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(23,23,23,0.4);
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+    .music-editorial {
+        padding: 70px 6%;
+    }
+
+    .music-feature {
+        grid-template-columns: 1fr;
+    }
+
+    .music-cover {
+        min-height: 300px;
+    }
+
+    .music-details {
+        padding: 30px;
+    }
+
+    .music-footer {
+        flex-direction: column;
+    }
+}
+/* Show the complete BIGBANG picture */
+.music-cover {
+    min-height: 420px;
+    background: #171717;
+}
+
+.music-cover img {
+    object-fit: contain;
+}
+/* ==================================
+   STEP 8: FUTURE GOALS
+================================== */
+
+.goals-editorial {
+    background: #e8e7df;
+    color: #171717;
+    padding: 100px 8%;
+}
+
+.goals-heading,
+.goals-main,
+.goals-grid,
+.goals-footer {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.goals-eyebrow {
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 3px;
+}
+
+.goals-heading h2 {
+    font-size: clamp(65px, 10vw, 115px);
+    line-height: 0.83;
+    letter-spacing: -6px;
+    margin: 25px 0 55px;
+    font-weight: 1000;
+}
+
+.goals-heading h2 span {
+    color: #8ba83d;
+}
+
+/* MAIN STATEMENT */
+
+.goals-main {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 40px;
+    align-items: end;
+    padding: 35px 0;
+    border-top: 1px solid #bdbdb4;
+    border-bottom: 1px solid #bdbdb4;
+}
+
+.goals-statement > span {
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    color: #8ba83d;
+}
+
+.goals-statement h3 {
+    font-size: clamp(38px, 5vw, 60px);
+    line-height: 1;
+    letter-spacing: -3px;
+    margin: 15px 0 0;
+}
+
+.goals-description p {
+    color: #66665e;
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+/* GOAL CARDS */
+
+.goals-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 35px;
+}
+
+.goal-card {
+    background: #c5f36b;
+    padding: 30px 25px;
+    min-height: 240px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.goal-card > span {
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.goal-card h4 {
+    font-size: 32px;
+    line-height: 0.95;
+    letter-spacing: -1.5px;
+    margin: 30px 0 15px;
+}
+
+.goal-card p {
+    font-size: 13px;
+    line-height: 1.7;
+    color: #454b35;
+}
+
+.goal-dark {
+    background: #171717;
+    color: #ffffff;
+}
+
+.goal-dark p {
+    color: #b7b7b7;
+}
+
+.goal-dark > span {
+    color: #c5f36b;
+}
+
+/* FOOTER */
+
+.goals-footer {
+    margin-top: 35px;
+    padding-top: 20px;
+    border-top: 1px solid #bdbdb4;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+/* TABLET */
+
+@media (max-width: 800px) {
+    .goals-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .goal-card:last-child {
+        grid-column: span 2;
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 550px) {
+    .goals-editorial {
+        padding: 70px 6%;
+    }
+
+    .goals-main {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .goals-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .goal-card:last-child {
+        grid-column: auto;
+    }
+
+    .goals-footer {
+        flex-direction: column;
+    }
+}
+
+/* ==================================
+   STEP 9: MULTIMEDIA SHOWCASE
+================================== */
+
+.media-editorial {
+    background: #171717;
+    color: #f5f3eb;
+    padding: 100px 8%;
+}
+
+.media-heading,
+.media-feature,
+.media-footer {
+    max-width: 1150px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.media-eyebrow {
+    color: #c5f36b;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 3px;
+}
+
+.media-heading h2 {
+    font-size: clamp(60px, 9vw, 105px);
+    line-height: 0.85;
+    letter-spacing: -5px;
+    margin: 22px 0;
+    font-weight: 1000;
+}
+
+.media-heading h2 span {
+    color: #c5f36b;
+}
+
+.media-heading > p:last-child {
+    color: #aaa99f;
+    font-size: 15px;
+}
+
+/* VIDEO FEATURE */
+
+.media-feature {
+    margin-top: 45px;
+    background: #262626;
+}
+
+.media-video {
+    width: 100%;
+    background: #000;
+}
+
+.media-video video {
+    display: block;
+    width: 100%;
+    max-height: 650px;
+    aspect-ratio: 16 / 9;
+    object-fit: contain;
+}
+
+/* VIDEO CAPTION */
+
+.media-caption {
+    padding: 30px 35px;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 30px;
+}
+
+.media-caption span {
+    color: #c5f36b;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.media-caption h3 {
+    font-size: clamp(32px, 5vw, 55px);
+    line-height: 0.9;
+    letter-spacing: -2px;
+    margin: 15px 0 0;
+}
+
+.media-caption > p {
+    max-width: 300px;
+    color: #aaa99f;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+/* FOOTER */
+
+.media-footer {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #444;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    color: #aaa99f;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+    .media-editorial {
+        padding: 70px 6%;
+    }
+
+    .media-caption {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 25px;
+    }
+
+    .media-footer {
+        flex-direction: column;
+    }
+}
+
+/* ==================================
+   STEP 10: CONTACT SECTION
+================================== */
+
+.contact-editorial {
+    background: #c5f36b;
+    color: #171717;
+    padding: 100px 8%;
+}
+
+.contact-heading,
+.contact-panel,
+.contact-bottom {
+    max-width: 1150px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact-eyebrow {
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 3px;
+}
+
+.contact-heading h2 {
+    font-size: clamp(60px, 9vw, 105px);
+    line-height: 0.85;
+    letter-spacing: -5px;
+    margin: 22px 0;
+    font-weight: 1000;
+}
+
+.contact-heading h2 span {
+    color: #ffffff;
+    -webkit-text-stroke: 2px #171717;
+}
+
+.contact-heading > p:last-child {
+    font-size: 15px;
+    color: #454b35;
+}
+
+/* CONTACT PANEL */
+
+.contact-panel {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 50px;
+    background: #171717;
+    color: #ffffff;
+}
+
+/* LEFT SIDE */
+
+.contact-message {
+    padding: 45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contact-message > span {
+    color: #c5f36b;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.contact-message h3 {
+    font-size: clamp(35px, 5vw, 55px);
+    line-height: 0.95;
+    letter-spacing: -2px;
+    margin: 20px 0;
+}
+
+.contact-message p {
+    color: #aaa99f;
+    font-size: 14px;
+    line-height: 1.8;
+    max-width: 350px;
+}
+
+/* RIGHT SIDE */
+
+.contact-details {
+    padding: 45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contact-item {
+    padding: 20px 0;
+    border-bottom: 1px solid #444;
+}
+
+.contact-item:first-child {
+    padding-top: 0;
+}
+
+.contact-item:last-child {
+    border-bottom: none;
+}
+
+.contact-item span {
+    color: #c5f36b;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.contact-item p,
+.contact-item a {
+    display: inline-block;
+    margin: 10px 0 0;
+    color: #ffffff;
+    font-size: 16px;
+    text-decoration: none;
+    overflow-wrap: anywhere;
+}
+
+.contact-item a:hover {
+    color: #c5f36b;
+}
+
+/* BOTTOM LABEL */
+
+.contact-bottom {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(23,23,23,0.4);
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+    .contact-editorial {
+        padding: 70px 6%;
+    }
+
+    .contact-panel {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-message,
+    .contact-details {
+        padding: 30px;
+    }
+
+    .contact-bottom {
+        flex-direction: column;
+    }
+}
+
+/* ==================================
+   STEP 11: FINAL FOOTER
+================================== */
+
+.footer-editorial {
+    background: #171717;
+    color: #f5f3eb;
+    padding: 70px 8% 25px;
+}
+
+.footer-main {
+    max-width: 1150px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr 1.2fr;
+    gap: 40px;
+    padding-bottom: 60px;
+}
+
+/* BRAND */
+
+.footer-brand h2 {
+    font-size: 55px;
+    font-weight: 1000;
+    letter-spacing: -4px;
+    margin: 0;
+}
+
+.footer-brand h2 span {
+    color: #c5f36b;
+}
+
+.footer-brand p {
+    color: #aaa99f;
+    font-size: 10px;
+    letter-spacing: 2px;
+    margin-top: 10px;
+}
+
+/* NAVIGATION */
+
+.footer-navigation {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-navigation span,
+.footer-message > span {
+    color: #c5f36b;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.footer-navigation a {
+    color: #aaa99f;
+    text-decoration: none;
+    font-size: 13px;
+    transition: color 0.3s ease;
+}
+
+.footer-navigation a:hover {
+    color: #c5f36b;
+}
+
+/* FINAL MESSAGE */
+
+.footer-message h3 {
+    font-size: 35px;
+    line-height: 0.95;
+    letter-spacing: -1.5px;
+    margin: 20px 0;
+}
+
+.footer-message a {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 18px;
+    background: #c5f36b;
+    color: #171717;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    text-decoration: none;
+}
+
+/* COPYRIGHT */
+
+.footer-bottom {
+    max-width: 1150px;
+    margin: auto;
+    padding-top: 20px;
+    border-top: 1px solid #444;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    color: #888;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+    .footer-main {
+        grid-template-columns: 1fr 1fr;
+        gap: 35px;
+    }
+
+    .footer-message {
+        grid-column: span 2;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 450px) {
+    .footer-main {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-message {
+        grid-column: auto;
+    }
+}
+/* Footer without navigation links */
+.footer-main {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+@media (max-width: 700px) {
+    .footer-main {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-message {
+        grid-column: auto;
+    }
+}
+/* ==================================
+   ASHYO MODERN NAVIGATION
+================================== */
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    background: #171717;
+    border-bottom: 1px solid #333;
+}
+
+.modern-navbar {
+    max-width: 1450px;
+    min-height: 82px;
+    margin: auto;
+    padding: 15px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.modern-logo {
+    color: #f5f3eb;
+    font-size: 29px;
+    font-weight: 1000;
+    letter-spacing: -2px;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.modern-logo span {
+    color: #c5f36b;
+}
+
+.modern-nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 8px 18px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.modern-nav-links a {
+    color: #aaa99f;
+    font-size: 11px;
+    font-weight: 800;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.modern-nav-links a:hover {
+    color: #c5f36b;
+}
+
+.modern-nav-links .nav-contact {
+    color: #171717;
+    background: #c5f36b;
+    padding: 11px 17px;
+    border-radius: 3px;
+}
+
+.modern-nav-links .nav-contact:hover {
+    background: #ffffff;
+    color: #171717;
+}
+
+/* TABLET AND MOBILE */
+
+@media (max-width: 900px) {
+    .modern-navbar {
+        flex-direction: column;
+        gap: 15px;
+        padding: 18px 5%;
+    }
+
+    .modern-nav-links {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 550px) {
+    .modern-nav-links {
+        gap: 14px;
+    }
+
+    .modern-nav-links a {
+        font-size: 10px;
+    }
+}
